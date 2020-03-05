@@ -1,0 +1,6 @@
+# IntellijIdea files
+.idea/
+#ignore libs folder
+libs/
+#ignore node_modules folder
+node_modules/
