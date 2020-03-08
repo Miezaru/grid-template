@@ -1,0 +1,177 @@
+.posts {
+  background-color: $color-light;
+  &__container {
+    @extend %container;
+  }
+  &__items-container {
+    padding-bottom: $gap;
+    display: grid;
+    grid-gap: $gap;
+    text-align: center;
+    @include lg-min {
+      grid-template-columns: repeat(4);
+      grid-template-areas:
+        "a1 a1 a2 a3"
+        "a4 a5 a6 a6";
+    }
+
+    @include lg {
+      grid-template-columns: repeat(3);
+      grid-template-areas:
+        "a1 a1 a2"
+        "a3 a4 a4"
+        "a5 a5 a6";
+    }
+    @include md {
+      grid-template-columns: repeat(2);
+      grid-template-areas:
+        "a1 a2"
+        "a3 a4"
+        "a5 a6";
+    }
+    @include sm {
+      grid-template-columns: repeat(1);
+      grid-template-areas:
+        "a1"
+        "a2"
+        "a3"
+        "a4"
+        "a5"
+        "a6";
+    }
+  }
+  &__button {
+    padding: 20px 0px 60px 0px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.posts-item {
+  height: 550px;
+  padding: 0px;
+  margin: 0px;
+  background-color: $color-gray-light;
+  position: relative;
+
+  &__heading {
+    text-align: center;
+    margin: $gap;
+  }
+
+  &__description {
+    text-align: center;
+    margin: $gap;
+  }
+
+  &__img {
+    height: 300px;
+    width: inherit;
+  }
+
+  &:hover {
+    color: $color-primary;
+    background-color: rgba($color-gray-medium, 0.8);
+  }
+
+  &:nth-of-type(1) {
+    grid-area: a1;
+    @include lg-min {
+      width: 640px;
+    }
+    @include lg {
+      width: 628px;
+    }
+    @include md {
+      width: 352px;
+    }
+
+    @include sm {
+      width: 532px;
+    }
+  }
+
+  &:nth-of-type(2) {
+    grid-area: a2;
+    @include lg-min {
+      width: 310px;
+    }
+    @include lg {
+      width: 304px;
+    }
+
+    @include md {
+      width: 352px;
+    }
+    @include sm {
+      width: 532px;
+    }
+  }
+
+  &:nth-of-type(3) {
+    grid-area: a3;
+    @include lg-min {
+      width: 310px;
+    }
+    @include lg {
+      width: 304px;
+    }
+
+    @include md {
+      width: 352px;
+    }
+    @include sm {
+      width: 532px;
+    }
+  }
+
+  &:nth-of-type(4) {
+    grid-area: a4;
+    @include lg-min {
+      width: 310px;
+    }
+    @include lg {
+      width: 628px;
+    }
+
+    @include md {
+      width: 352px;
+    }
+    @include sm {
+      width: 532px;
+    }
+  }
+
+  &:nth-of-type(5) {
+    grid-area: a5;
+    @include lg-min {
+      width: 310px;
+    }
+    @include lg {
+      width: 628px;
+    }
+
+    @include md {
+      width: 352px;
+    }
+    @include sm {
+      width: 532px;
+    }
+  }
+
+  &:nth-of-type(6) {
+    grid-area: a6;
+    @include lg-min {
+      width: 640px;
+    }
+    @include lg {
+      width: 304px;
+    }
+    @include md {
+      width: 352px;
+    }
+    @include sm {
+      width: 532px;
+    }
+  }
+}

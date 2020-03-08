@@ -1,0 +1,55 @@
+.footer {
+  background-color: $color-primary;
+  &__container {
+    @extend %container;
+    height: 250px;
+    padding-top: 1px;
+    // Если топ паддинга нету, то вылетает за рамки. Почему?? Не ясно
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px auto 0 auto;
+    width: 224px;
+    height: 48px;
+    padding: 10px 0 10px 0px;
+  }
+  &__icon-image {
+    height: 24px;
+    width: 24px;
+    margin: 0px;
+  }
+  &__icon-link {
+    height: 24px;
+    width: 24px;
+    border: transparent;
+    border-radius: 6.5px;
+    &:hover {
+      background-color: $color-accent;
+    }
+  }
+  &__line {
+    border: none;
+    margin: 26.8px auto;
+    width: 76px;
+    background-color: $color-gray-dark;
+    color: $color-gray-dark; // Цвет линии для IE6-7
+    color: $color-gray-dark;
+    height: 1px;
+  }
+  &__title-second {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: $font-size;
+    font-weight: 400;
+    &__title-first {
+      letter-spacing: 5px;
+      font-weight: 100;
+    }
+  }
+  &__icons {
+    margin: 0px;
+    padding: 0px;
+  }
+}

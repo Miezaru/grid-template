@@ -14,7 +14,7 @@
         "a7 a8 a9 a6";
     }
 
-    @include lg-md {
+    @include lg {
       grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
         "a1 a1 a2"
@@ -23,7 +23,7 @@
         "a7 a8 a6"
         "a7 a9 a9";
     }
-
+    
     @include md {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
