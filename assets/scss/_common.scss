@@ -30,14 +30,53 @@ h1 {
 }
 
 h2 {
-  font-family: $font-header;
+  letter-spacing: 0.1em;
+
   color: $color-primary;
+
+  font-family: $font-header;
   line-height: 1.2em;
+
+  @include lg-min {
+    margin-bottom: $gap * 2.8;
+
+    font-size: 2.5rem;
+  }
+  @include lg-md {
+    margin-bottom: $gap * 2.1;
+
+    font-size: 2rem;
+  }
+  @include md-sm {
+    margin-bottom: $gap * 1.8;
+
+    font-size: 1.5rem;
+  }
+  @include sm {
+    margin-bottom: $gap * 1.8;
+
+    text-align: center;
+
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  letter-spacing: 0.05em;
+
+  color: $color-gray;
+
+  font-size: 1.125rem;
 }
 
 a {
   text-decoration: none;
+
   color: $color-light;
+}
+
+p {
+  color: $color-gray;
 }
 
 .btn {

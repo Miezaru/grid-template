@@ -1,177 +1,137 @@
 .posts {
-  background-color: $color-light;
+  @extend %section;
+
   &__container {
     @extend %container;
   }
-  &__items-container {
-    padding-bottom: $gap;
-    display: grid;
-    grid-gap: $gap;
-    text-align: center;
-    @include lg-min {
-      grid-template-columns: repeat(4);
-      grid-template-areas:
-        "a1 a1 a2 a3"
-        "a4 a5 a6 a6";
-    }
 
-    @include lg {
-      grid-template-columns: repeat(3);
+  &__grid {
+    display: grid;
+
+    padding-bottom: $gap;
+
+    grid-gap: $gap;
+
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
       grid-template-areas:
-        "a1 a1 a2"
-        "a3 a4 a4"
-        "a5 a5 a6";
+        "p1 p1 p2 p3"
+        "p4 p5 p6 p6";
     }
-    @include md {
-      grid-template-columns: repeat(2);
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
-        "a1 a2"
-        "a3 a4"
-        "a5 a6";
+        "p1 p1 p2"
+        "p3 p4 p4"
+        "p5 p5 p6";
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "p1 p2"
+        "p3 p4"
+        "p5 p6";
     }
     @include sm {
-      grid-template-columns: repeat(1);
+      grid-template-columns: 1fr;
       grid-template-areas:
-        "a1"
-        "a2"
-        "a3"
-        "a4"
-        "a5"
-        "a6";
+        "p1"
+        "p2"
+        "p3"
+        "p4"
+        "p5"
+        "p6";
     }
   }
+
   &__button {
-    padding: 20px 0px 60px 0px;
-    display: flex;
-    justify-content: center;
   }
 }
 
-.posts-item {
-  height: 550px;
-  padding: 0px;
-  margin: 0px;
-  background-color: $color-gray-light;
-  position: relative;
+.post-item {
+  transition: background-color 0.5s;
 
-  &__heading {
-    text-align: center;
-    margin: $gap;
-  }
-
-  &__description {
-    text-align: center;
-    margin: $gap;
-  }
-
-  &__img {
-    height: 300px;
-    width: inherit;
-  }
+  background-color: lighten($color-gray-light, 5%);
 
   &:hover {
-    color: $color-primary;
-    background-color: rgba($color-gray-medium, 0.8);
+    background-color: darken($color-gray-light, 5%);
+
+    .post-item__image img {
+      transform: scale(1.1);
+    }
+
+    h3 {
+      color: $color-primary;
+    }
+
+    p {
+      color: $color-primary;
+    }
+  }
+  &__link {
+    display: grid;
+    overflow: hidden;
+
+    height: 100%;
+
+    grid-template-rows: 300px 1fr;
+  }
+  &__image {
+    display: flex;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+
+    background-color: $color-primary;
+
+    img {
+      width: 100%;
+
+      transition: transform 0.5s;
+
+      object-fit: cover;
+    }
   }
 
-  &:nth-of-type(1) {
-    grid-area: a1;
-    @include lg-min {
-      width: 640px;
-    }
-    @include lg {
-      width: 628px;
-    }
-    @include md {
-      width: 352px;
+  &__caption {
+    display: grid;
+    align-content: center;
+
+    padding: $gap;
+
+    h3 {
+      transition: color 0.5s;
+      text-align: center;
+
+      font-family: $font-header;
     }
 
-    @include sm {
-      width: 532px;
+    p {
+      transition: color 0.5s;
+      text-align: center;
     }
+  }
+  &:nth-of-type(1) {
+    grid-area: p1;
   }
 
   &:nth-of-type(2) {
-    grid-area: a2;
-    @include lg-min {
-      width: 310px;
-    }
-    @include lg {
-      width: 304px;
-    }
-
-    @include md {
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
+    grid-area: p2;
   }
 
   &:nth-of-type(3) {
-    grid-area: a3;
-    @include lg-min {
-      width: 310px;
-    }
-    @include lg {
-      width: 304px;
-    }
-
-    @include md {
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
+    grid-area: p3;
   }
 
   &:nth-of-type(4) {
-    grid-area: a4;
-    @include lg-min {
-      width: 310px;
-    }
-    @include lg {
-      width: 628px;
-    }
-
-    @include md {
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
+    grid-area: p4;
   }
 
   &:nth-of-type(5) {
-    grid-area: a5;
-    @include lg-min {
-      width: 310px;
-    }
-    @include lg {
-      width: 628px;
-    }
-
-    @include md {
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
+    grid-area: p5;
   }
 
   &:nth-of-type(6) {
-    grid-area: a6;
-    @include lg-min {
-      width: 640px;
-    }
-    @include lg {
-      width: 304px;
-    }
-    @include md {
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
+    grid-area: p6;
   }
 }

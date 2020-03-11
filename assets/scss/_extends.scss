@@ -5,3 +5,21 @@
   padding-left: $gap;
   padding-right: $gap;
 }
+%section {
+  @include lg-min {
+    padding-top: $gap * 5;
+    padding-bottom: $gap * 5;
+  }
+  @include lg-md {
+    padding-top: $gap * 4;
+    padding-bottom: $gap * 4;
+  }
+  @include md {
+    padding-top: $gap * 3;
+    padding-bottom: $gap * 3;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
