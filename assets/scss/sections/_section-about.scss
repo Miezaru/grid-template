@@ -5,20 +5,19 @@
 
   &__container {
     display: grid;
-    
+
     @extend %container;
     @include lg-min {
       grid-gap: $gap * 5;
-      grid-template-columns: 1fr 271px;
+      grid-template-columns: 1fr 265.55px;
     }
     @include lg-md {
       grid-gap: $gap * 2;
-      grid-template-columns: 1fr 271px;
-      @content;
+      grid-template-columns: 1fr 265.55px;
     }
     @include md-sm {
       grid-gap: $gap;
-      grid-template-columns: 1fr 236px;
+      grid-template-columns: 1fr 235px;
     }
     @include sm {
       grid-gap: $gap;
@@ -31,6 +30,12 @@
       @include lg-min {
         font-size: 1.125rem;
       }
+      @include lg-md {
+        font-size: 1.125rem;
+      }
+      @include md-sm {
+        font-size: $font-size;
+      }
 
       &:first-of-type {
         position: relative;
@@ -38,6 +43,7 @@
         margin-top: -5px;
 
         &::after {
+          display: grid;
           position: absolute;
           top: 0;
 
@@ -55,7 +61,7 @@
             right: -$gap;
           }
           @include md-sm {
-            right: -$gap / 2; 
+            right: -$gap / 2;
           }
           @include sm {
             display: none;
@@ -70,6 +76,7 @@
   }
   &__image {
     display: grid;
+
     align-content: center;
 
     justify-items: center;
@@ -79,5 +86,24 @@
       max-height: 480px;
       margin-top: $gap;
     }
+  }
+  &__paragraph {
+    @include md-sm {
+      display: none;
+    }
+    &:last-of-type {
+      @include lg-md {
+        display: none;
+      }
+      @include md-sm {
+        display: none;
+      }
+      @include sm {
+        display: none;
+      }
+    }
+  }
+  &__button {
+    @extend %btn-wrapper;
   }
 }

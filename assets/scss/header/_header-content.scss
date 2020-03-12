@@ -10,23 +10,75 @@
 
     @include lg-min {
       margin: 0 0 53px;
+      font-size: $font-size * 3.75;
     }
 
     @include lg-md {
       margin: 0 0 43px;
+      font-size: $font-size * 2.5;
     }
 
     @include md {
       margin: 0 0 43px;
+      font-size: $font-size * 1.875;
     }
   }
 
   &__buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 
-    .btn:not(:last-of-type) {
-      margin-right: $gap;
+    .btn {
+      @include lg-min {
+        min-width: 250px;
+
+        &:not(:last-of-type) {
+          margin-right: $gap;
+        }
+      }
+      @include lg-md {
+        min-width: 200px;
+        height: 50px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        letter-spacing: 0.1em;
+
+        font-size: 1rem;
+
+        &:not(:last-of-type) {
+          margin-right: $gap;
+        }
+      }
+      @include md-sm {
+        min-width: 170px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        letter-spacing: 0.05em;
+
+        font-size: 1rem;
+
+        &:not(:last-of-type) {
+          margin-right: $gap;
+        }
+      }
+      @include sm {
+        min-width: 170px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        letter-spacing: 0.05em;
+
+        font-size: 1rem;
+
+        &:not(:last-of-type) {
+          margin-bottom: $gap;
+        }
+      }
     }
   }
 }

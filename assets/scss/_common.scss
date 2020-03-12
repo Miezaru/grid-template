@@ -80,29 +80,15 @@ p {
 }
 
 .btn {
-  border: 2px solid $color-light;
+  border-color: $color-light;
   background-color: rgba($color-light, 0.1);
-  min-width: 250px;
+
+  @extend %btn-common;
 }
 
 .btn-accent {
-  border: 2px solid $color-primary;
+  border-color: $color-primary;
   background-color: rgba($color-primary, 0.8);
-  min-width: 350px;
-}
 
-.btn,
-.btn-accent {
-  padding: 18px $gap;
-  height: 60px;
-  display: block;
-  text-align: center;
-  font-size: 1.125rem;
-  letter-spacing: 0.1em;
-  transition: background-color 0.5s;
-
-  &:hover,
-  &:focus {
-    background-color: $color-accent;
-  }
+  @extend %btn-common;
 }

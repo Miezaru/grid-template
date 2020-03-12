@@ -1,100 +1,80 @@
 .form {
+  padding: ($gap * 1.5) 0;
+
   background-color: $color-primary;
+
   &__container {
+    display: grid;
+
+    grid-gap: $gap;
     @extend %container;
-    padding: 0px;
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 1fr;
+    }
   }
-  &__fieldset {
-    padding: 0px;
-    border-color: transparent;
-    text-align: center;
+
+  .btn-accent {
+    width: 100%;
+
+    color: $color-light;
+    border-color: rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.2);
+    background-color: rgba($color-light, 0.1);
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+
+      border-color: $color-light;
+      background-color: $color-accent;
+    }
   }
 }
+
 .form-item {
-  position: relative;
-  height: 60px;
-  margin: 30px 9.75px;
-  background-color: rgba($color-light, 0.1);
-  border: transparent;
-  border-bottom: 2px solid $color-gray-medium;
-  padding: 15px 25px;
-  letter-spacing: 0.1em;
-  color: $color-light;
-  &__advance {
-    &::-webkit-input-placeholder {
-      color: $color-light;
-    }
-    &:-moz-placeholder {
-      color: $color-light;
-    }
-    &::-moz-placeholder {
-      color: $color-light;
-    }
-    &:-ms-input-placeholder {
-      color: $color-light;
-    }
-  }
   &:nth-of-type(1) {
-    grid-area: a1;
-    @include lg-min {
-      width: 420.33px;
-    }
-    @include lg {
-      width: 302px;
-    }
-    @include md {
-      width: 724px;
-    }
-
-    @include sm {
-      width: 532px;
+    @include md-sm {
+      grid-column: 1 / span 2;
     }
   }
 
-  &:nth-of-type(2) {
-    grid-area: a2;
-    @include lg-min {
-      width: 420.33px;
-    }
-    @include lg {
-      width: 302px;
-    }
+  &__input {
+    display: block;
 
-    @include md {
-      margin-top: 0px;
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
-  }
+    width: 100%;
+    height: 60px;
+    padding-right: $gap;
+    padding-left: $gap;
 
-  &:nth-of-type(3) {
-    grid-area: a1;
-    @include lg-min {
-      width: 420.33px;
-    }
-    @include lg {
-      width: 302px;
-    }
+    transition: background-color 0.5s, border-color 0.5s;
+    letter-spacing: 0.15em;
 
-    @include md {
-      margin-top: 0px;
-      width: 352px;
-    }
-    @include sm {
-      width: 532px;
-    }
-  }
-
-  &__follow {
-    background-color: rgba($color-light, 0.2);
     color: $color-light;
-    border: 2px solid transparent;
-    transition: background-color 0.5s;
-    &:hover {
-      background-color: $color-accent;
-      border-color: $color-light;
+    border: 2px solid rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.25);
+    background-color: rgba($color-light, 0.05);
+
+    font-size: 1.125rem;
+
+    &::placeholder {
+      color: $color-gray;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: rgba($color-light, 0.15);
+      border-bottom-color: $color-light;
+      background-color: rgba($color-light, 0.15);
+
+      &::placeholder {
+        color: lighten($color-gray, 15%);
+      }
     }
   }
 }
