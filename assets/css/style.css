@@ -1375,7 +1375,7 @@ p {
     font-size: 1rem;
   }
   .header-content__buttons .btn:not(:last-of-type) {
-    margin-bottom: 20px;
+    margin-right: 20px;
   }
   .skills__container {
     grid-template-columns: 1fr;
