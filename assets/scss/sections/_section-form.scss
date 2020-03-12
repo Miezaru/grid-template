@@ -5,15 +5,18 @@
 
   &__container {
     display: grid;
-
     grid-gap: $gap;
+
     @extend %container;
+
     @include lg-min {
       grid-template-columns: repeat(3, 1fr);
     }
+    
     @include lg-md {
       grid-template-columns: repeat(3, 1fr);
     }
+    
     @include md-sm {
       grid-template-columns: 1fr 1fr;
     }
@@ -30,7 +33,6 @@
     &:hover,
     &:focus {
       cursor: pointer;
-
       border-color: $color-light;
       background-color: $color-accent;
     }
@@ -38,6 +40,7 @@
 }
 
 .form-item {
+
   &:nth-of-type(1) {
     @include md-sm {
       grid-column: 1 / span 2;
@@ -59,7 +62,7 @@
     border: 2px solid rgba($color-light, 0);
     border-bottom-color: rgba($color-light, 0.25);
     background-color: rgba($color-light, 0.05);
-
+    
     font-size: 1.125rem;
 
     &::placeholder {

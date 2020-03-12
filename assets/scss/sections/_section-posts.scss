@@ -18,6 +18,7 @@
         "p1 p1 p2 p3"
         "p4 p5 p6 p6";
     }
+
     @include lg-md {
       grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
@@ -25,6 +26,7 @@
         "p3 p4 p4"
         "p5 p5 p6";
     }
+
     @include md-sm {
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
@@ -32,6 +34,7 @@
         "p3 p4"
         "p5 p6";
     }
+
     @include sm {
       grid-template-columns: 1fr;
       grid-template-areas:
@@ -97,7 +100,6 @@
   &__caption {
     display: grid;
     align-content: center;
-
     padding: $gap;
 
     h3 {

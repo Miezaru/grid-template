@@ -46,7 +46,6 @@
           display: grid;
           position: absolute;
           top: 0;
-
           width: 2px;
           height: 200px;
 
@@ -57,12 +56,15 @@
           @include lg-min {
             right: -$gap * 2.5;
           }
+
           @include lg-md {
             right: -$gap;
           }
+
           @include md-sm {
             right: -$gap / 2;
           }
+
           @include sm {
             display: none;
           }
@@ -74,6 +76,7 @@
       }
     }
   }
+
   &__image {
     display: grid;
 
@@ -87,6 +90,7 @@
       margin-top: $gap;
     }
   }
+
   &__paragraph {
     @include md-sm {
       display: none;
