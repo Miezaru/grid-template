@@ -1,6 +1,10 @@
 .skills {
   padding: ($gap / 2) ($gap / 2) ($gap);
 
+  @include sm {
+    padding: $gap ;
+  }
+
   &__container {
     padding-bottom: $gap;
     display: grid;
@@ -36,7 +40,6 @@
     }
     @include sm {
       grid-gap: $gap;
-      padding: $gap;
       grid-template-columns: 1fr;
       grid-template-areas:
         "a1"
