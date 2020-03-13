@@ -39,14 +39,12 @@
 
       transition: color 0.5s;
 
+      font-size: 36px;
+
       &:hover,
       &:focus {
         color: $color-accent;
       }
-    }
-
-    .fab {
-      font-size: 36px;
     }
   }
 

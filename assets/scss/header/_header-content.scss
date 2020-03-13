@@ -29,6 +29,11 @@
     flex-wrap: wrap;
     justify-content: center;
 
+    @include xs {
+      align-items: center;
+      flex-direction: column;
+    }
+
     .btn {
       @include lg-min {
         min-width: 250px;
@@ -67,8 +72,8 @@
           margin-right: $gap;
         }
       }
-      
-      @include sm {
+
+      @include sm-xs {
         min-width: 170px;
         height: 40px;
         padding-top: 10px;
@@ -80,6 +85,20 @@
 
         &:not(:last-of-type) {
           margin-right: $gap;
+        }
+      }
+
+      @include xs {
+        width: 170px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        letter-spacing: 0.05em;
+
+        font-size: 1rem;
+        &:not(:last-of-type) {
+          margin-bottom: $gap;
         }
       }
     }

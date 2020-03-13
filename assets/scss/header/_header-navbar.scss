@@ -114,11 +114,24 @@
         text-align: right;
       }
     }
+    &:last-of-type {
+      padding-right: 0px;
+    }
+  }
+
+  &__item {
+    padding: $gap;
+
+    &:last-child {
+      padding-right: 0;
+      @include md-xx {
+        padding-right: 20px;
+      }
+    }
   }
 
   &__link {
     display: block;
-    padding: $gap;
     font-size: 1.125rem;
     transition: color 0.5s;
 

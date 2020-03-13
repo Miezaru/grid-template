@@ -1,5 +1,5 @@
 .skills {
-  padding: ($gap / 2) ($gap / 2) ($gap * 2);
+  padding: ($gap / 2) ($gap / 2) ($gap);
 
   &__container {
     padding-bottom: $gap;
@@ -23,7 +23,7 @@
         "a7 a8 a6"
         "a7 a9 a9";
     }
-    
+
     @include md {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
@@ -35,6 +35,8 @@
         "a8 a9";
     }
     @include sm {
+      grid-gap: $gap;
+      padding: $gap;
       grid-template-columns: 1fr;
       grid-template-areas:
         "a1"
@@ -121,6 +123,7 @@
   }
 
   &__link {
+    font-size: 20px;
     display: flex;
     padding: $gap;
     width: 100%;
@@ -128,6 +131,9 @@
     justify-content: center;
     align-items: center;
     transition: color 0.5s;
+    @include md {
+      font-size: 18px;
+    }
   }
 
   &:hover {
