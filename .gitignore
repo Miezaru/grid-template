@@ -4,3 +4,7 @@
 node_modules/
 #ignore samples folder
 samples/
+.bashrc
+.yarnrc
+gulpfile.js
+package-lock.json
